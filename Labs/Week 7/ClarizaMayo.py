@@ -1,10 +1,11 @@
-users_input = list(map(int,input("what numbers do you want to add?(example: 12345)")))
+users_input =list(map(int,input("what numbers do you want to add?(example: 12345)")))
+
 def sum_int(*args):
-    count = 0
-    for i in args:
-        count += i
-    print(count)
-    return count
+    sum_ = 0
+    for num in args:
+        sum_ += num
+    print(sum_)
+    return sum_
         
 
 if __name__ == '__main__': #letting me call the name of file    

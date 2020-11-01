@@ -48,9 +48,11 @@ class GuessingGame:
         self.max_guesses = 3
         self.guesses = 0
         self.random_number = randint(1,3)
+        
     @staticmethod
     def welcome_message():
         print("Welcome to guessing game")
+        
     def start(self):
         GuessingGame.welcome_message()
         win = self.handle_guesses()
@@ -58,6 +60,7 @@ class GuessingGame:
             print("You have won")
         else:
             print("You have lost")
+            
     def handle_guesses(self):
         while self.guesses < self.max_guesses:
             guess = input("Enter a guess")
@@ -65,6 +68,7 @@ class GuessingGame:
                 return True
             self.guesses += 1
         return False
+    
 if __name__ == '__main__': #letting me call the name of file
     game = GuessingGame()
     game.start()
