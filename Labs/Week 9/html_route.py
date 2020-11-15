@@ -29,6 +29,4 @@ def result():
         return result
     else:
         return f"this was a {request.method}"
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    
