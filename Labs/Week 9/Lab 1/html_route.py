@@ -2,7 +2,7 @@ from flask import Flask
 import requests
 from bs4 import BeautifulSoup
 
-app = Flask('webapp')
+app = Flask(__name__)
 
 URL = 'https://en.wikipedia.org/wiki/List_of_countries_by_percentage_of_population_living_in_poverty'
 page = requests.get(URL)
@@ -12,6 +12,10 @@ soup = BeautifulSoup(page.content)
 @app.route('/')
 def home():
     return soup.prettify()
+
+@app.route('/about')
+def home():
+    return "Poverty Project"
 
 @app.route('/user/<username>')
 def message(username):
@@ -30,3 +34,5 @@ def result():
     else:
         return f"this was a {request.method}"
     
+if __name__ == '__main__': #letting me call the name of file    -- terminal
+    print(soup.prettify())
